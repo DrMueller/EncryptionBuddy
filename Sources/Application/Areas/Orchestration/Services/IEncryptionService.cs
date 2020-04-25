@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Mmu.EncryptionBuddy.Areas.Services
+namespace Mmu.EncryptionBuddy.Areas.Orchestration.Services
 {
     public interface IEncryptionService
     {

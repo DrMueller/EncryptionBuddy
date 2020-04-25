@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using Mmu.EncryptionBuddy.Areas.Services;
+using Mmu.EncryptionBuddy.Areas.Orchestration.Services;
 
 namespace Mmu.EncryptionBuddy.Areas.Views
 {

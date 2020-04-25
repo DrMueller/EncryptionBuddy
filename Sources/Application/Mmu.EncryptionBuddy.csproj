@@ -9,12 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Models\" />
     <Folder Include="Infrastructure\Assets\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Mmu.Mlh.ServiceProvisioning" Version="2.1.2" />
+    <PackageReference Include="System.IO.Abstractions" Version="6.0.32" />
   </ItemGroup>
 
 </Project>

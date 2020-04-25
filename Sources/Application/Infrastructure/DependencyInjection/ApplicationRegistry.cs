@@ -1,4 +1,5 @@
-﻿using StructureMap;
+﻿using System.IO.Abstractions;
+using StructureMap;
 
 namespace Mmu.EncryptionBuddy.Infrastructure.DependencyInjection
 {
@@ -12,6 +13,8 @@ namespace Mmu.EncryptionBuddy.Infrastructure.DependencyInjection
                     scanner.AssemblyContainingType<ApplicationRegistry>();
                     scanner.WithDefaultConventions();
                 });
+
+            For<IFileSystem>().Use<FileSystem>().Singleton();
         }
     }
 }

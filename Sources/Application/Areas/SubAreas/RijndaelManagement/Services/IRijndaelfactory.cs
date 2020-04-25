@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Mmu.EncryptionBuddy.Areas.SubAreas.Rijndael.Services
+namespace Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services
 {
     public interface IRijndaelFactory
     {

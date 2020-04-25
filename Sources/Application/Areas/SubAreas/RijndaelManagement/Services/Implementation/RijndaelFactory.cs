@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Mmu.EncryptionBuddy.Areas.SubAreas.Rijndael.Services.Servants;
+using Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services.Servants;
 
-namespace Mmu.EncryptionBuddy.Areas.SubAreas.Rijndael.Services.Implementation
+namespace Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services.Implementation
 {
     public class RijndaelFactory : IRijndaelFactory
     {

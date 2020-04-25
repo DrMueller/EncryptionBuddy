@@ -1,4 +1,0 @@
-- System-Tray
-- Secret aus einem externen Pfad auslesen
-
-- Decypt / Encrypt

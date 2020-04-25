@@ -1,6 +1,6 @@
 ﻿using Mmu.Mlh.LanguageExtensions.Areas.Invariance;
 
-namespace Mmu.EncryptionBuddy.Areas.SubAreas.Rijndael.Models
+namespace Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Models
 {
     public class RijndaelSecrets
     {

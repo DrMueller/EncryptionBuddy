@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using Mmu.EncryptionBuddy.Areas.SubAreas.Rijndael.Services;
+using Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services;
 
 namespace Mmu.EncryptionBuddy.Areas.Orchestration.Services.Implementation
 {
@@ -17,7 +17,7 @@ namespace Mmu.EncryptionBuddy.Areas.Orchestration.Services.Implementation
         }
 
         // https://stackoverflow.com/questions/1629828/how-to-encrypt-a-string-in-net
-        public async Task<string> DescryptAsync(string cipherText)
+        public async Task<string> DecryptAsync(string cipherText)
         {
             using var rijndaelCipher = await _rijndaelFactory.CreateAsync();
             await using var memoryStream = new MemoryStream();

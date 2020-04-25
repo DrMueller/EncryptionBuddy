@@ -2,9 +2,9 @@
 using System.IO.Abstractions;
 using System.Text;
 using System.Threading.Tasks;
-using Mmu.EncryptionBuddy.Areas.SubAreas.Rijndael.Models;
+using Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Models;
 
-namespace Mmu.EncryptionBuddy.Areas.SubAreas.Rijndael.Services.Servants.Implementation
+namespace Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services.Servants.Implementation
 {
     public class SecretProvider : ISecretProvider
     {

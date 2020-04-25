@@ -3,7 +3,7 @@ using Mmu.EncryptionBuddy.Areas.Orchestration.Services;
 
 namespace Mmu.EncryptionBuddy.Areas.Views
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         private readonly IEncryptionService _encryptionService;
 
@@ -15,12 +15,18 @@ namespace Mmu.EncryptionBuddy.Areas.Views
 
         private async void BtnDecrypt_Click(object sender, RoutedEventArgs e)
         {
-            TxbNewValue.Text = await _encryptionService.DescryptAsync(TxbValue.Text);
+            var decyptedValue = await _encryptionService.DecryptAsync(TxbValue.Text);
+            TxbNewValue.Text = decyptedValue;
+
+            Clipboard.SetText(decyptedValue);
         }
 
         private async void BtnEncrypt_Click(object sender, RoutedEventArgs e)
         {
-            TxbNewValue.Text = await _encryptionService.EncryptAsync(TxbValue.Text);
+            var encryptedValue = await _encryptionService.EncryptAsync(TxbValue.Text);
+            TxbNewValue.Text = encryptedValue;
+
+            Clipboard.SetText(encryptedValue);
         }
     }
 }

@@ -3,10 +3,12 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services;
 
 namespace Mmu.EncryptionBuddy.Areas.Orchestration.Services.Implementation
 {
+    [UsedImplicitly]
     public class EncryptionService : IEncryptionService
     {
         private readonly IRijndaelFactory _rijndaelFactory;

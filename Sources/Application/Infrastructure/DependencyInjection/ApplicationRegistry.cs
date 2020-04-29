@@ -1,8 +1,10 @@
 ﻿using System.IO.Abstractions;
+using JetBrains.Annotations;
 using StructureMap;
 
 namespace Mmu.EncryptionBuddy.Infrastructure.DependencyInjection
 {
+    [UsedImplicitly]
     public class ApplicationRegistry : Registry
     {
         public ApplicationRegistry()

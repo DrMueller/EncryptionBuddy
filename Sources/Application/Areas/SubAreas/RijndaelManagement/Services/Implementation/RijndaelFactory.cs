@@ -1,8 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Security.Cryptography;
+using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services.Servants;
 
 namespace Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services.Implementation
 {
+    [UsedImplicitly]
     public class RijndaelFactory : IRijndaelFactory
     {
         private readonly ISecretProvider _secretProvider;
@@ -12,9 +15,9 @@ namespace Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services.Impleme
             _secretProvider = secretProvider;
         }
 
-        public async Task<System.Security.Cryptography.Rijndael> CreateAsync()
+        public async Task<Rijndael> CreateAsync()
         {
-            var rijandel = System.Security.Cryptography.Rijndael.Create();
+            var rijandel = Rijndael.Create();
             var secrets = await _secretProvider.ProvideSecretsAsync();
 
             rijandel.Key = secrets.Key;

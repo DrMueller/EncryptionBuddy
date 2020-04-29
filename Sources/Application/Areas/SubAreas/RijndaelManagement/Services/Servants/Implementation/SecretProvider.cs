@@ -2,10 +2,12 @@
 using System.IO.Abstractions;
 using System.Text;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Models;
 
 namespace Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services.Servants.Implementation
 {
+    [UsedImplicitly]
     public class SecretProvider : ISecretProvider
     {
         private readonly IFileSystem _fileSystem;

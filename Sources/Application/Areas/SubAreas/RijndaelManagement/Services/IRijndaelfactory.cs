@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Security.Cryptography;
+using System.Threading.Tasks;
 
 namespace Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services
 {
     public interface IRijndaelFactory
     {
-        Task<System.Security.Cryptography.Rijndael> CreateAsync();
+        Task<Rijndael> CreateAsync();
     }
 }

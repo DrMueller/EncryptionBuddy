@@ -38,7 +38,7 @@ namespace Mmu.EncryptionBuddy.Areas.SubAreas.RijndaelManagement.Services.Servant
                 jsonPath = _fileSystem.Path.Combine(Environment.GetEnvironmentVariable("AppData"), DropboxInfoPath);
             }
 
-            var dropboxPath = _fileSystem.File.ReadAllText(jsonPath).Split('\"')[5].Replace(@"\\", @"\");
+            var dropboxPath = _fileSystem.File.ReadAllText(jsonPath).Split('\"')[5].Replace(@"\\", @"\", StringComparison.OrdinalIgnoreCase);
             var completePath = _fileSystem.Path.Combine(dropboxPath, @"Apps\EncryptionBuddy\Secrets.txt");
             return completePath;
         }

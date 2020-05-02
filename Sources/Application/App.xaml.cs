@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 using Mmu.EncryptionBuddy.Areas.Views;
+using Mmu.EncryptionBuddy.Areas.Views.Main;
 using Mmu.Mlh.LanguageExtensions.Areas.Assemblies.Extensions;
 using Mmu.Mlh.ServiceProvisioning.Areas.Initialization.Models;
 using Mmu.Mlh.ServiceProvisioning.Areas.Initialization.Services;
@@ -20,7 +21,10 @@ namespace Mmu.EncryptionBuddy
         // C:\Users\mlm\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
         protected override void OnStartup(StartupEventArgs e)
         {
-            var containerConfig = ContainerConfiguration.CreateFromAssembly(typeof(App).Assembly);
+            var containerConfig = ContainerConfiguration.CreateFromAssembly(
+                typeof(App).Assembly,
+                initializeAutoMapper: true);
+
             _container = ContainerInitializationService.CreateInitializedContainer(containerConfig);
 
             var assemblyBasePath = typeof(App).Assembly.GetBasePath();

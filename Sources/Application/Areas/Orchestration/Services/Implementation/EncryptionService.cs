@@ -18,8 +18,46 @@ namespace Mmu.EncryptionBuddy.Areas.Orchestration.Services.Implementation
             _rijndaelFactory = rijndaelFactory;
         }
 
+        public async Task<string> ConvertAsync(string value)
+        {
+            if (IsBase64(value))
+            {
+                return await DecryptAsync(value);
+            }
+
+            return await EncryptAsync(value);
+        }
+
+        // https://stackoverflow.com/questions/6309379/how-to-check-for-a-valid-base64-encoded-string
+        private static bool IsBase64(string value)
+        {
+            if (string.IsNullOrEmpty(value) ||
+                value.Length % 4 != 0 ||
+                value.Contains(" ", StringComparison.OrdinalIgnoreCase) ||
+                value.Contains("\t", StringComparison.OrdinalIgnoreCase) ||
+                value.Contains("\r", StringComparison.OrdinalIgnoreCase) ||
+                value.Contains("\n", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            try
+            {
+                // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
+                Convert.FromBase64String(value);
+                return true;
+            }
+
+            // ReSharper disable once EmptyGeneralCatchClause
+            catch (Exception)
+            {
+            }
+
+            return false;
+        }
+
         // https://stackoverflow.com/questions/1629828/how-to-encrypt-a-string-in-net
-        public async Task<string> DecryptAsync(string cipherText)
+        private async Task<string> DecryptAsync(string cipherText)
         {
             using var rijndaelCipher = await _rijndaelFactory.CreateAsync();
             await using var memoryStream = new MemoryStream();
@@ -35,7 +73,7 @@ namespace Mmu.EncryptionBuddy.Areas.Orchestration.Services.Implementation
             return Encoding.ASCII.GetString(plainBytes, 0, plainBytes.Length);
         }
 
-        public async Task<string> EncryptAsync(string plainText)
+        private async Task<string> EncryptAsync(string plainText)
         {
             using var rijndaelCipher = await _rijndaelFactory.CreateAsync();
             var rijndaelEncryptor = rijndaelCipher.CreateEncryptor();

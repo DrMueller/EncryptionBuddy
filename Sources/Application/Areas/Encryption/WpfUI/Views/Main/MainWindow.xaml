@@ -1,0 +1,42 @@
+﻿<Window x:Class="Mmu.EncryptionBuddy.Areas.Encryption.WpfUI.Views.Main.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        Title="Encryption Buddy"
+        Height="250"
+        Width="250">
+
+    <Window.InputBindings>
+        <KeyBinding
+            Command="{Binding Path=CloseCommand, Mode=OneTime}"
+            Key="Esc" />
+    </Window.InputBindings>
+
+    <Window.Resources>
+        <ResourceDictionary Source="/Areas/Views/Main/MainWindowDict.xaml" />
+    </Window.Resources>
+
+    <Grid Style="{StaticResource MainGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="TxbValue" Margin="0,0,0,10" />
+        <TextBox Grid.Row="1" x:Name="TxbNewValue" />
+
+        <StackPanel Style="{StaticResource SpActions}" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <ComboBox Style="{StaticResource CmbFavorites}"
+                      ItemsSource="{Binding Favorites, Mode=OneWay}"
+                      DisplayMemberPath="Name" SelectedValuePath="Base64Value"
+                      SelectedItem="{Binding SelectedFavoriteEntry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Click="BtnManageFavorites_Click" Style="{StaticResource BtnFavorites}" Content="+" />
+            <Button Click="BtnConvert_Click" Content="Convert" />
+        </StackPanel>
+    </Grid>
+</Window>

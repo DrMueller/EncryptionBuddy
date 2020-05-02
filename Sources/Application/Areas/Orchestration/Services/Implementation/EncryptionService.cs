@@ -20,6 +20,11 @@ namespace Mmu.EncryptionBuddy.Areas.Orchestration.Services.Implementation
 
         public async Task<string> ConvertAsync(string value)
         {
+            if (string.IsNullOrEmpty(value))
+            {
+                return string.Empty;
+            }
+
             if (IsBase64(value))
             {
                 return await DecryptAsync(value);

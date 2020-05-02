@@ -7,7 +7,7 @@ namespace Mmu.EncryptionBuddy.Infrastructure.Settings.Services
     {
         public FileSystemSettings ProvideFileSystemSettings()
         {
-            return new FileSystemSettings { DirectoryPath = @"C:\Users\mlm\Dropbox\Apps\EncryptionBuddy\Favorites" };
+            return new FileSystemSettings { DirectoryPath = @"Dropbox\Apps\EncryptionBuddy\CmbFavorites" };
         }
     }
 }

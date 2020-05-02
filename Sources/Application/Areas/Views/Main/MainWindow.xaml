@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        SizeToContent="Height"
+        SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterScreen"
         Title="Encryption Buddy"
         Height="250"
@@ -30,9 +30,13 @@
         <TextBox x:Name="TxbValue" Margin="0,0,0,10" />
         <TextBox Grid.Row="1" x:Name="TxbNewValue" />
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <ComboBox Style="{StaticResource Favorites}" ItemsSource="{Binding Favorites, Mode=OneWay}" DisplayMemberPath="Name" SelectedValuePath="Base64Value" />
-            <Button x:Name="BtnConvert" Click="BtnConvert_Click" Content="Convert" />
+        <StackPanel Style="{StaticResource SpActions}" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <ComboBox Style="{StaticResource CmbFavorites}"
+                      ItemsSource="{Binding Favorites, Mode=OneWay}"
+                      DisplayMemberPath="Name" SelectedValuePath="Base64Value"
+                      SelectedItem="{Binding SelectedFavoriteEntry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Click="BtnManageFavorites_Click" Style="{StaticResource BtnFavorites}" Content="+" />
+            <Button Click="BtnConvert_Click" Content="Convert" />
         </StackPanel>
     </Grid>
 </Window>

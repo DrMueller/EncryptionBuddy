@@ -4,9 +4,6 @@ namespace Mmu.EncryptionBuddy.Areas.RijndaelManagement.Domain.Models
 {
     public class RijndaelSecrets
     {
-        public byte[] InitialVector { get; }
-        public byte[] Key { get; }
-
         public RijndaelSecrets(byte[] initialVector, byte[] key)
         {
             Guard.ObjectNotNull(() => initialVector);
@@ -17,5 +14,8 @@ namespace Mmu.EncryptionBuddy.Areas.RijndaelManagement.Domain.Models
             InitialVector = initialVector;
             Key = key;
         }
+
+        public byte[] InitialVector { get; }
+        public byte[] Key { get; }
     }
 }

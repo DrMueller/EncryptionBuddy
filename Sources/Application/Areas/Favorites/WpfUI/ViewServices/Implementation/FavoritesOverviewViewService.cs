@@ -20,7 +20,13 @@ namespace Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewServices.Implementation
         {
             var allEntries = await _favoriteEntrRepo.LoadAllAsync();
             var result = allEntries
-                .Select(fav => new FavoriteOverviewEntryViewData { Base64Value = fav.Base64Value, Id = fav.Id, Name = fav.Name })
+                .Select(
+                    fav => new FavoriteOverviewEntryViewData
+                    {
+                        Base64Value = fav.Base64Value,
+                        Id = fav.Id,
+                        Name = fav.Name
+                    })
                 .OrderBy(fav => fav.Name)
                 .ToList();
 

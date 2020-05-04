@@ -5,9 +5,6 @@ namespace Mmu.EncryptionBuddy.Areas.Favorites.Domain.Models
 {
     public class FavoriteEntry : AggregateRoot<string>
     {
-        public string Base64Value { get; }
-        public string Name { get; }
-
         public FavoriteEntry(string name, string base64Value, string id)
             : base(id)
         {
@@ -17,5 +14,8 @@ namespace Mmu.EncryptionBuddy.Areas.Favorites.Domain.Models
             Name = name;
             Base64Value = base64Value;
         }
+
+        public string Base64Value { get; }
+        public string Name { get; }
     }
 }

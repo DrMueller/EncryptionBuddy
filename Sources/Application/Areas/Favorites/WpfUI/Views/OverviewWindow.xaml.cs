@@ -11,15 +11,23 @@ namespace Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.Views
     {
         private readonly IFavoritesOverviewViewService _overviewService;
         private FavoriteOverviewEntryViewData _selectedEntry;
+
+        public FavoriteEntriesOverviewWindow(IFavoritesOverviewViewService overviewService)
+        {
+            _overviewService = overviewService;
+
+            Loaded += FavoriteEntriesOverviewWindow_Loaded;
+            DataContext = this;
+            InitializeComponent();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
         public bool CanDeleteEntry => SelectedEntry != null;
         public ObservableCollection<FavoriteOverviewEntryViewData> Favorites { get; private set; }
 
         public FavoriteOverviewEntryViewData SelectedEntry
         {
-            get
-            {
-                return _selectedEntry;
-            }
+            get => _selectedEntry;
             set
             {
                 if (_selectedEntry == value)
@@ -33,18 +41,21 @@ namespace Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.Views
             }
         }
 
-        public FavoriteEntriesOverviewWindow(IFavoritesOverviewViewService overviewService)
+        private void AddFavoriteEntry_Click(object sender, RoutedEventArgs e)
         {
-            _overviewService = overviewService;
-
-            Loaded += FavoriteEntriesOverviewWindow_Loaded;
-            DataContext = this;
-            InitializeComponent();
+            Favorites.Add(new FavoriteOverviewEntryViewData());
         }
 
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            DialogResult = false;
+            Close();
+        }
+
+        private void DeleteSelectedEntry_Click(object sender, RoutedEventArgs e)
+        {
+            Favorites.Remove(SelectedEntry);
+            SelectedEntry = null;
         }
 
         private async void FavoriteEntriesOverviewWindow_Loaded(object sender, RoutedEventArgs e)
@@ -55,9 +66,9 @@ namespace Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.Views
             OnPropertyChanged(nameof(Favorites));
         }
 
-        private void AddFavoriteEntry_Click(object sender, RoutedEventArgs e)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            Favorites.Add(new FavoriteOverviewEntryViewData());
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private async void SaveFavoriteEntries_Click(object sender, RoutedEventArgs e)
@@ -67,19 +78,5 @@ namespace Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.Views
             DialogResult = true;
             Close();
         }
-
-        private void DeleteSelectedEntry_Click(object sender, RoutedEventArgs e)
-        {
-            Favorites.Remove(SelectedEntry);
-            SelectedEntry = null;
-        }
-
-        private void Cancel_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = false;
-            Close();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

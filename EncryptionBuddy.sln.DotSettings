@@ -56,9 +56,11 @@
 	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/INDENT_ANONYMOUS_METHOD_BLOCK/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/INDENT_NESTED_WHILE_STMT/@EntryValue">True</s:Boolean>
 	<s:Int64 x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/KEEP_BLANK_LINES_IN_DECLARATIONS/@EntryValue">1</s:Int64>
+	<s:Int64 x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/MAX_INITIALIZER_ELEMENTS_ON_LINE/@EntryValue">2</s:Int64>
 	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/PLACE_ACCESSOR_ATTRIBUTE_ON_SAME_LINE_EX/@EntryValue">NEVER</s:String>
 	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/PLACE_ACCESSORHOLDER_ATTRIBUTE_ON_SAME_LINE_EX/@EntryValue">NEVER</s:String>
 	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/PLACE_FIELD_ATTRIBUTE_ON_SAME_LINE_EX/@EntryValue">NEVER</s:String>
+	
 	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/PLACE_WHILE_ON_NEW_LINE/@EntryValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SPACE_AFTER_TYPECAST_PARENTHESES/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SPACE_BETWEEN_KEYWORD_AND_TYPE/@EntryValue">False</s:Boolean>
@@ -161,7 +163,7 @@
       &lt;/Entry.Match&gt;&#xD;
       &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -173,10 +175,9 @@
           &lt;Static /&gt;&#xD;
         &lt;/And&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
-        &lt;Static /&gt;&#xD;
+        &lt;Access /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
     &lt;/Entry&gt;&#xD;
@@ -184,10 +185,10 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Field" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
-        &lt;Static /&gt;&#xD;
+        &lt;Access /&gt;&#xD;
+        &lt;Readonly /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
     &lt;/Entry&gt;&#xD;
@@ -195,9 +196,9 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Constructor" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-     &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -206,9 +207,9 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Destructor" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -217,9 +218,9 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Delegate" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -228,9 +229,9 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Event" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -239,9 +240,9 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Enum" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -250,17 +251,17 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Interface" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
     &lt;/Entry&gt;&#xD;
     &lt;Entry DisplayName="Properties"&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -269,9 +270,9 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Indexer" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -282,9 +283,9 @@
           &lt;Kind Is="Method" /&gt;&#xD;
         &lt;/And&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -293,9 +294,9 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Struct" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;
@@ -304,9 +305,9 @@
       &lt;Entry.Match&gt;&#xD;
         &lt;Kind Is="Class" /&gt;&#xD;
       &lt;/Entry.Match&gt;&#xD;
-    &lt;Entry.SortBy&gt;&#xD;
+      &lt;Entry.SortBy&gt;&#xD;
         &lt;Kind Is="Member" /&gt;&#xD;
-        &lt;Access Order="Public Internal ProtectedInternal Protected Private"  /&gt;&#xD;
+        &lt;Access Order="Public Internal ProtectedInternal Protected Private" /&gt;&#xD;
         &lt;Static /&gt;&#xD;
         &lt;Name /&gt;&#xD;
       &lt;/Entry.SortBy&gt;&#xD;

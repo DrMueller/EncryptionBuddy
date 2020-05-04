@@ -30,7 +30,8 @@
         <TextBox x:Name="TxbValue" Margin="0,0,0,10" />
         <TextBox Grid.Row="1" x:Name="TxbNewValue" />
 
-        <StackPanel Style="{StaticResource SpActions}" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Style="{StaticResource SpActions}" Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right">
             <ComboBox Style="{StaticResource CmbFavorites}"
                       ItemsSource="{Binding Favorites, Mode=OneWay}"
                       DisplayMemberPath="Name" SelectedValuePath="Base64Value"

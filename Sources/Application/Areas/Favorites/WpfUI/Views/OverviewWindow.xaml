@@ -33,7 +33,6 @@
                 CanUserDeleteRows="False"
                 ItemsSource="{Binding Favorites, Mode=OneWay}"
                 SelectedItem="{Binding SelectedEntry, Mode=TwoWay}"
-                Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UIElement}}"
                 IsReadOnly="false"
 
                 VerticalScrollBarVisibility="Visible">

@@ -19,6 +19,22 @@ namespace Mmu.EncryptionBuddy.Areas.Encryption.WpfUI.Views.Main
         private readonly IFavoritesOverviewViewService _favoritesOverviewService;
         private readonly IServiceLocator _serviceLocator;
         private FavoriteOverviewEntryViewData _selectedFavoriteEntry;
+
+        public MainWindow(
+            IFavoritesOverviewViewService favoritesOverviewService,
+            IEncryptionService encryptionService,
+            IServiceLocator serviceLocator)
+        {
+            _favoritesOverviewService = favoritesOverviewService;
+            _encryptionService = encryptionService;
+            _serviceLocator = serviceLocator;
+            DataContext = this;
+
+            Loaded += MainWindow_Loaded;
+            InitializeComponent();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
         public ICommand CloseCommand => new RelayCommand(Close);
         public ObservableCollection<FavoriteOverviewEntryViewData> Favorites { get; private set; }
 
@@ -36,30 +52,12 @@ namespace Mmu.EncryptionBuddy.Areas.Encryption.WpfUI.Views.Main
                 OnPropertyChanged();
 
                 TxbValue.Text = _selectedFavoriteEntry?.Base64Value ?? string.Empty;
-                Dispatcher.Invoke(async () =>
-                {
-                    await ConvertAsync();
-                });
+                Dispatcher.Invoke(
+                    async () =>
+                    {
+                        await ConvertAsync();
+                    });
             }
-        }
-
-        public MainWindow(
-            IFavoritesOverviewViewService favoritesOverviewService,
-            IEncryptionService encryptionService,
-            IServiceLocator serviceLocator)
-        {
-            _favoritesOverviewService = favoritesOverviewService;
-            _encryptionService = encryptionService;
-            _serviceLocator = serviceLocator;
-            DataContext = this;
-
-            Loaded += MainWindow_Loaded;
-            InitializeComponent();
-        }
-
-        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            await LoadOverviewAsync();
         }
 
         private async void BtnConvert_Click(object sender, RoutedEventArgs e)
@@ -79,9 +77,12 @@ namespace Mmu.EncryptionBuddy.Areas.Encryption.WpfUI.Views.Main
             SelectedFavoriteEntry = null;
         }
 
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private async Task ConvertAsync()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            var newValue = await _encryptionService.ConvertAsync(TxbValue.Text);
+            TxbNewValue.Text = newValue;
+
+            Clipboard.SetText(newValue);
         }
 
         private async Task LoadOverviewAsync()
@@ -91,14 +92,14 @@ namespace Mmu.EncryptionBuddy.Areas.Encryption.WpfUI.Views.Main
             OnPropertyChanged(nameof(Favorites));
         }
 
-        private async Task ConvertAsync()
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var newValue = await _encryptionService.ConvertAsync(TxbValue.Text);
-            TxbNewValue.Text = newValue;
-
-            Clipboard.SetText(newValue);
+            await LoadOverviewAsync();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

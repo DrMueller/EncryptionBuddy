@@ -17,7 +17,7 @@
     </Window.InputBindings>
 
     <Window.Resources>
-        <ResourceDictionary Source="/Areas/Views/Main/MainWindowDict.xaml" />
+        <ResourceDictionary Source="/Areas/Encryption/WpfUI/Views/Main/MainWindowDict.xaml" />
     </Window.Resources>
 
     <Grid Style="{StaticResource MainGrid}">

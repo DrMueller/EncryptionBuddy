@@ -2,6 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Mmu.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services;
@@ -46,19 +47,14 @@ namespace Mmu.EncryptionBuddy.Areas.Encryption.Domain.Services.Implementation
                 return false;
             }
 
-            try
+            var regex = new Regex(@"^[a-zA-Z0-9\+/]*={2}$");
+            if (!regex.IsMatch(value))
             {
-                // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
-                Convert.FromBase64String(value);
-                return true;
+                return false;
             }
 
-            // ReSharper disable once EmptyGeneralCatchClause
-            catch (Exception)
-            {
-            }
-
-            return false;
+            var buffer = new Span<byte>(new byte[value.Length]);
+            return Convert.TryFromBase64String(value, buffer, out _);
         }
 
         // https://stackoverflow.com/questions/1629828/how-to-encrypt-a-string-in-net

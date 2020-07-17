@@ -39,7 +39,7 @@ namespace Mmu.Wb.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services.Servan
             }
 
             var dropboxPath = _fileSystem.File.ReadAllText(jsonPath).Split('\"')[5].Replace(@"\\", @"\", StringComparison.OrdinalIgnoreCase);
-            var completePath = _fileSystem.Path.Combine(dropboxPath, @"Apps\EncryptionBuddy\Secrets.txt");
+            var completePath = _fileSystem.Path.Combine(dropboxPath, @"Apps\WindowsBuddies\EncryptionBuddy\Secrets.txt");
             return completePath;
         }
     }

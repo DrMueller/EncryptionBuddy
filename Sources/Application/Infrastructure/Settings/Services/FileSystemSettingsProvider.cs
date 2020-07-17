@@ -23,7 +23,7 @@ namespace Mmu.Wb.EncryptionBuddy.Infrastructure.Settings.Services
                 .LocateDropboxPath()
                 .Reduce(() => throw new Exception("Could not locate Dropbox path."));
 
-            var directoryPath = _fileSystem.Path.Combine(dropboxPath, @"Apps\EncryptionBuddy\CmbFavorites");
+            var directoryPath = _fileSystem.Path.Combine(dropboxPath, @"Apps\WindowsBuddies\EncryptionBuddy\CmbFavorites");
 
             return new FileSystemSettings { DirectoryPath = directoryPath };
         }

@@ -1,4 +1,4 @@
-﻿namespace Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData
+﻿namespace Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData
 {
     public class FavoriteOverviewEntryViewData
     {

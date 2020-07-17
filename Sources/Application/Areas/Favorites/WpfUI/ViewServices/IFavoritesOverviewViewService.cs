@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData;
 
-namespace Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewServices
+namespace Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.ViewServices
 {
     public interface IFavoritesOverviewViewService
     {

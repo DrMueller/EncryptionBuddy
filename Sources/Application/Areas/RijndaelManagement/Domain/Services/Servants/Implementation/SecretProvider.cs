@@ -3,9 +3,9 @@ using System.IO.Abstractions;
 using System.Text;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using Mmu.EncryptionBuddy.Areas.RijndaelManagement.Domain.Models;
+using Mmu.Wb.EncryptionBuddy.Areas.RijndaelManagement.Domain.Models;
 
-namespace Mmu.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services.Servants.Implementation
+namespace Mmu.Wb.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services.Servants.Implementation
 {
     [UsedImplicitly]
     public class SecretProvider : ISecretProvider

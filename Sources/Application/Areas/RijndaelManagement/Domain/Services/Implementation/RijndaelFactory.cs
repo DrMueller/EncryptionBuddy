@@ -1,9 +1,9 @@
 ﻿using System.Security.Cryptography;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using Mmu.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services.Servants;
+using Mmu.Wb.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services.Servants;
 
-namespace Mmu.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services.Implementation
+namespace Mmu.Wb.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services.Implementation
 {
     [UsedImplicitly]
     public class RijndaelFactory : IRijndaelFactory

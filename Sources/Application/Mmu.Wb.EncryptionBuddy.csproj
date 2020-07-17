@@ -7,20 +7,15 @@
     <CodeAnalysisRuleSet>..\..\CA_ProductionCode.ruleset</CodeAnalysisRuleSet>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Infrastructure\Assets\App.ico</ApplicationIcon>
+    <AssemblyName>Mmu.Wb.EncryptionBuddy</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mmu.Mlh.ApplicationExtensions" Version="2.1.18" />
-    <PackageReference Include="Mmu.Mlh.DataAccess.FileSystem" Version="2.1.2" />
-    <PackageReference Include="Mmu.Mlh.ServiceProvisioning" Version="2.1.2" />
-    <PackageReference Include="Mmu.Mlh.WpfCoreExtensions" Version="1.1.15" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Mmu.Mlh.ApplicationExtensions" Version="2.4.3" />
+    <PackageReference Include="Mmu.Mlh.DataAccess.FileSystem" Version="2.2.1" />
+    <PackageReference Include="Mmu.Mlh.WpfCoreExtensions" Version="2.3.8" />
     <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Windows.Forms.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +26,12 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Windows.Forms.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

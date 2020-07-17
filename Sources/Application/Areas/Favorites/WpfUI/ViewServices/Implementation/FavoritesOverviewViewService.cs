@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Mmu.EncryptionBuddy.Areas.Favorites.Domain.Models;
-using Mmu.EncryptionBuddy.Areas.Favorites.Domain.Services;
-using Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.Domain.Models;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.Domain.Services;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData;
 
-namespace Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewServices.Implementation
+namespace Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.ViewServices.Implementation
 {
     public class FavoritesOverviewViewService : IFavoritesOverviewViewService
     {

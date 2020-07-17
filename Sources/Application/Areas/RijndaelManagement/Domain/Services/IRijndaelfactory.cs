@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Threading.Tasks;
 
-namespace Mmu.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services
+namespace Mmu.Wb.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services
 {
     public interface IRijndaelFactory
     {

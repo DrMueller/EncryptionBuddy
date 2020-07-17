@@ -4,14 +4,14 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using Mmu.EncryptionBuddy.Areas.Encryption.Domain.Services;
-using Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData;
-using Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.Views;
-using Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewServices;
 using Mmu.Mlh.ServiceProvisioning.Areas.Provisioning.Services;
 using Mmu.Mlh.WpfCoreExtensions.Areas.MvvmShell.CommandManagement.Commands;
+using Mmu.Wb.EncryptionBuddy.Areas.Encryption.Domain.Services;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.Views;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.ViewServices;
 
-namespace Mmu.EncryptionBuddy.Areas.Encryption.WpfUI.Views.Main
+namespace Mmu.Wb.EncryptionBuddy.Areas.Encryption.WpfUI.Views.Main
 {
     public partial class MainWindow : INotifyPropertyChanged
     {

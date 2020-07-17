@@ -2,10 +2,10 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData;
-using Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.ViewServices;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.ViewData;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.ViewServices;
 
-namespace Mmu.EncryptionBuddy.Areas.Favorites.WpfUI.Views
+namespace Mmu.Wb.EncryptionBuddy.Areas.Favorites.WpfUI.Views
 {
     public partial class FavoriteEntriesOverviewWindow : Window, INotifyPropertyChanged
     {

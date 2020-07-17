@@ -1,8 +1,8 @@
-﻿using Mmu.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModels;
-using Mmu.EncryptionBuddy.Areas.Favorites.Domain.Models;
-using Mmu.Mlh.DataAccess.Areas.DataModeling.Services;
+﻿using Mmu.Mlh.DataAccess.Areas.DataModeling.Services;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModels;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.Domain.Models;
 
-namespace Mmu.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModelAdapters
+namespace Mmu.Wb.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModelAdapters
 {
     public interface IFavoriteEntryDataModelAdapter : IDataModelAdapter<FavoriteEntryDataModel, FavoriteEntry, string>
     {

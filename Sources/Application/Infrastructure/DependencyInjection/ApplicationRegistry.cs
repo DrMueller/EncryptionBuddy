@@ -1,13 +1,13 @@
 ﻿using System.IO.Abstractions;
 using JetBrains.Annotations;
-using Mmu.EncryptionBuddy.Infrastructure.Settings.Services;
+using Lamar;
 using Mmu.Mlh.DataAccess.FileSystem.Infrastructure.Settings.Services;
-using StructureMap;
+using Mmu.Wb.EncryptionBuddy.Infrastructure.Settings.Services;
 
-namespace Mmu.EncryptionBuddy.Infrastructure.DependencyInjection
+namespace Mmu.Wb.EncryptionBuddy.Infrastructure.DependencyInjection
 {
     [UsedImplicitly]
-    public class ApplicationRegistry : Registry
+    public class ApplicationRegistry : ServiceRegistry
     {
         public ApplicationRegistry()
         {

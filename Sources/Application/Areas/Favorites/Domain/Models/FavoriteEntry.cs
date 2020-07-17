@@ -1,7 +1,7 @@
 ﻿using Mmu.Mlh.DomainExtensions.Areas.DomainModeling;
 using Mmu.Mlh.LanguageExtensions.Areas.Invariance;
 
-namespace Mmu.EncryptionBuddy.Areas.Favorites.Domain.Models
+namespace Mmu.Wb.EncryptionBuddy.Areas.Favorites.Domain.Models
 {
     public class FavoriteEntry : AggregateRoot<string>
     {

@@ -4,7 +4,7 @@ using Mmu.Mlh.ApplicationExtensions.Areas.Dropbox.Services;
 using Mmu.Mlh.DataAccess.FileSystem.Infrastructure.Settings.Models;
 using Mmu.Mlh.DataAccess.FileSystem.Infrastructure.Settings.Services;
 
-namespace Mmu.EncryptionBuddy.Infrastructure.Settings.Services
+namespace Mmu.Wb.EncryptionBuddy.Infrastructure.Settings.Services
 {
     public class FileSystemSettingsProvider : IFileSystemSettingsProvider
     {

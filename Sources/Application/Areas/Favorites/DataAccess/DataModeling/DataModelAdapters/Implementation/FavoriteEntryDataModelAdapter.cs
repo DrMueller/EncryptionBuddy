@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Mmu.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModels;
-using Mmu.EncryptionBuddy.Areas.Favorites.Domain.Models;
 using Mmu.Mlh.DataAccess.Areas.DataModeling.Services.Implementation;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModels;
+using Mmu.Wb.EncryptionBuddy.Areas.Favorites.Domain.Models;
 
-namespace Mmu.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModelAdapters.Implementation
+namespace Mmu.Wb.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModelAdapters.Implementation
 {
     public class FavoriteEntryDataModelAdapter : DataModelAdapterBase<FavoriteEntryDataModel, FavoriteEntry, string>, IFavoriteEntryDataModelAdapter
     {

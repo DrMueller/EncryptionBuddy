@@ -5,9 +5,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using Mmu.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services;
+using Mmu.Wb.EncryptionBuddy.Areas.RijndaelManagement.Domain.Services;
 
-namespace Mmu.EncryptionBuddy.Areas.Encryption.Domain.Services.Implementation
+namespace Mmu.Wb.EncryptionBuddy.Areas.Encryption.Domain.Services.Implementation
 {
     [UsedImplicitly]
     public class EncryptionService : IEncryptionService

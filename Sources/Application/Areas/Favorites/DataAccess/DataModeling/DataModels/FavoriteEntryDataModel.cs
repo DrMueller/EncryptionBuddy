@@ -1,6 +1,6 @@
 ﻿using Mmu.Mlh.DataAccess.Areas.DataModeling.Models;
 
-namespace Mmu.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModels
+namespace Mmu.Wb.EncryptionBuddy.Areas.Favorites.DataAccess.DataModeling.DataModels
 {
     public class FavoriteEntryDataModel : AggregateRootDataModel<string>
     {
